@@ -1,0 +1,14 @@
+{
+  "name": "com.thingsimplied",
+  "version": "1.0.0",
+  "description": "Things Implied Post-Mortem",
+  "main": "index.html",
+  "author": "Derk-Jan Karrenbeld",
+  "license": "MIT",
+  "scripts": {
+    "start": "serve -p 5001"
+  },
+  "devDependencies": {
+    "serve": "^5.1.4"
+  }
+}
