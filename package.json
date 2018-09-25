@@ -9,6 +9,6 @@
     "start": "serve -p 5001"
   },
   "devDependencies": {
-    "serve": "^5.1.4"
+    "serve": "^10.0.0"
   }
 }
