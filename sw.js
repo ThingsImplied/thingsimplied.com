@@ -1,8 +1,10 @@
-var CACHE_NAME = 'com.thingsimplied.v1';
-var urlsToCache = [
+const CACHE_NAME          = 'com.thingsimplied.static.v1'
+const DYNAMIC_CACHE_NAME  = 'com.thingsimplied.dynamic.v1'
+
+const urlsToCache = [
   '/',
   '/favicon.ico',
-  '/manifest.json'
+  '/manifest.json',
 ];
 
 self.addEventListener('install', function(event) {
@@ -42,7 +44,7 @@ self.addEventListener('fetch', function(event) {
             // to clone it so we have two streams.
             var responseToCache = response.clone()
 
-            caches.open(CACHE_NAME)
+            caches.open(DYNAMIC_CACHE_NAME)
               .then(function(cache) {
                 cache.put(event.request, responseToCache)
               })
@@ -57,7 +59,7 @@ self.addEventListener('fetch', function(event) {
 
 self.addEventListener('activate', function(event) {
 
-  var cacheWhitelist = [CACHE_NAME]
+  var cacheWhitelist = [CACHE_NAME, DYNAMIC_CACHE_NAME]
 
   event.waitUntil(
     caches.keys().then(function(cacheNames) {
